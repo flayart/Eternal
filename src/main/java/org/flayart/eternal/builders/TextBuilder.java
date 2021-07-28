@@ -16,18 +16,22 @@ public class TextBuilder {
         component.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(text)));
         return this;
     }
+    
     public TextBuilder setUrl(String url) {
         component.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, url));
         return this;
     }
+    
     public TextBuilder setCommand(String command) {
         component.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command));
         return this;
     }
+    
     public TextBuilder setSuggestCommand(String command) {
         component.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, command));
         return this;
     }
+    
     public TextComponent build() {
         return component;
     }
