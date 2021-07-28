@@ -11,6 +11,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.List;
 
 public class ItemBuilder {
+    
     private final ItemStack itemStack;
     private final ItemMeta itemMeta;
 
@@ -60,7 +61,14 @@ public class ItemBuilder {
         return this;
     }
     
+    public ItemBuilder addItemFlag(ItemFlag... itemFlags) {
+        itemMeta.addItemFlags(itemFlags);
+        return this;
+    }
+    
     public ItemStack build() {
+        itemStack.setItemMeta(itemMeta);
+        
         return itemStack;
     }
 }
