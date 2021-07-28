@@ -39,8 +39,8 @@ public class InventoryUtils {
             if (itemStack.getType() != material) continue;
             
             total += itemStack.getAmount();
-            
         }
+        
         return total;
     }
     
