@@ -25,6 +25,7 @@ public class ItemBuilder {
     }
 
     public ItemBuilder setLore(String... lore) {
-        itemMeta.lore(Component.translatable(lore));
+        itemMeta.lore(lore);
+        return this;
     }
 }
