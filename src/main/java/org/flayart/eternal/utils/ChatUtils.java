@@ -4,14 +4,13 @@ import com.google.common.collect.Lists;
 import lombok.experimental.UtilityClass;
 import net.md_5.bungee.api.ChatColor;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @UtilityClass
 public class ChatUtils {
-    Pattern pattern = Pattern.compile("(?<!\\\\)(#[a-fA-F0-9]{6})");
+    private final Pattern pattern = Pattern.compile("(?<!\\\\)(#[a-fA-F0-9]{6})");
 
     public String color(String text) {
         return ChatColor.translateAlternateColorCodes('&', text);
