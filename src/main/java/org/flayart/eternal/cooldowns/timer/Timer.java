@@ -1,6 +1,7 @@
 package org.flayart.eternal.cooldowns.timer;
 
 import java.text.DecimalFormat;
+import java.util.concurrent.CompletableFuture;
 
 public abstract class Timer implements CooldownTimer {
     
@@ -27,6 +28,10 @@ public abstract class Timer implements CooldownTimer {
     
     @Override
     public void whenComplete(Runnable runnable) {
-        if(!isActive()) runnable.run();
+        CompletableFuture.runAsync(() -> {
+           if(isActive()) return;
+           
+           runnable.run();
+        });
     }
 }
