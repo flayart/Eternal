@@ -24,14 +24,12 @@ public class FileManager {
         this.plugin = plugin;
         this.name = name;
         this.file = new File(plugin.getDataFolder(), name + ".yml");
-        
-        if(saveDefault)
-            plugin.saveResource(name + ".yml", false);
-        else {
-            try {
-                file.createNewFile();
-            } catch (IOException ignored) {}
+    
+        try {
+            plugin.saveResource(name + ".yml", file.createNewFile());
+        } catch (IOException ignored) {
         }
+        
         
         this.configuration = YamlConfiguration.loadConfiguration(file);
         DATA.add(this);
