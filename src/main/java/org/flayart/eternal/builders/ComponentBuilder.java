@@ -5,29 +5,29 @@ import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.chat.hover.content.Text;
 
-public class TextBuilder {
+public class ComponentBuilder {
     private final TextComponent component;
 
-    public TextBuilder(String text) {
+    public ComponentBuilder(String text) {
         component = new TextComponent(text);
     }
 
-    public TextBuilder setHover(String text) {
+    public ComponentBuilder setHover(String text) {
         component.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(text)));
         return this;
     }
     
-    public TextBuilder setUrl(String url) {
+    public ComponentBuilder setUrl(String url) {
         component.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, url));
         return this;
     }
     
-    public TextBuilder setCommand(String command) {
+    public ComponentBuilder setCommand(String command) {
         component.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command));
         return this;
     }
     
-    public TextBuilder setSuggestCommand(String command) {
+    public ComponentBuilder setSuggestCommand(String command) {
         component.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, command));
         return this;
     }
