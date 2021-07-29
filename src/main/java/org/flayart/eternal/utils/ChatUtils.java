@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 @UtilityClass
 public class ChatUtils {
-    private final Pattern pattern = Pattern.compile("<#([A-Fa-f0-9]){6}>");
+    private final Pattern pattern = Pattern.compile("#([A-Fa-f0-9]){6}");
 
     public String color(String text) {
         Matcher matcher = pattern.matcher(text);
