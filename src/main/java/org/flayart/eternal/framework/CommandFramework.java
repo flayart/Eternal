@@ -28,7 +28,7 @@ public abstract class CommandFramework implements CommandExecutor {
     }
     
     @Override
-    public boolean onCommand(CommandSender senders, Command cmd, String s, String[] args) {
+    public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         try {
             if (args.length == 0) execute(sender);
             else {
