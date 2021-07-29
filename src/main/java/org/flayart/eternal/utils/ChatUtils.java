@@ -10,13 +10,9 @@ import java.util.regex.Pattern;
 
 @UtilityClass
 public class ChatUtils {
-    private final Pattern pattern = Pattern.compile("(?<!\\\\)(#[a-fA-F0-9]{6})");
+    private final Pattern pattern = Pattern.compile("<#([A-Fa-f0-9]){6}>");
 
     public String color(String text) {
-        return ChatColor.translateAlternateColorCodes('&', text);
-    }
-
-    public String colorHEX(String text) {
         Matcher matcher = pattern.matcher(text);
 
         while (matcher.find()) {
@@ -28,14 +24,6 @@ public class ChatUtils {
     }
 
     public List<String> color(String... text) {
-        List<String> strings = Lists.newArrayList();
-        for(String string : text) {
-            strings.add(ChatColor.translateAlternateColorCodes('&', string));
-        }
-        return strings;
-    }
-
-    public List<String> colorHEX(String... text) {
         List<String> strings = Lists.newArrayList();
 
         for(String string : text) {
