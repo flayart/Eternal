@@ -12,7 +12,7 @@ public class Credentials {
     private final String database;
     private final String username;
     private final String password;
-    private final boolean useSSL;
+    private final boolean useSSaL;
     
     public Credentials(YamlConfiguration file, String configurationSection) {
         Objects.requireNonNull(file.getConfigurationSection(configurationSection));
