@@ -27,8 +27,7 @@ public class FileManager {
     
         try {
             plugin.saveResource(name + ".yml", file.createNewFile());
-        } catch (IOException ignored) {
-        }
+        } catch (IOException ignored) {}
         
         
         this.configuration = YamlConfiguration.loadConfiguration(file);
