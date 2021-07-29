@@ -9,6 +9,5 @@ public abstract class SubCommand {
     private final String subcommand;
     private final int minargs;
 
-
     public abstract void execute(CommandSender sender, String[] args);
 }

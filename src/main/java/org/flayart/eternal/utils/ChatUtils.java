@@ -27,7 +27,7 @@ public class ChatUtils {
         return ChatColor.translateAlternateColorCodes('&', text);
     }
 
-    public List<String> colorList(String... text) {
+    public List<String> color(String... text) {
         List<String> strings = Lists.newArrayList();
         for(String string : text) {
             strings.add(ChatColor.translateAlternateColorCodes('&', string));
@@ -35,7 +35,7 @@ public class ChatUtils {
         return strings;
     }
 
-    public List<String> colorHEXList(String... text) {
+    public List<String> colorHEX(String... text) {
         List<String> strings = Lists.newArrayList();
 
         for(String string : text) {
