@@ -52,7 +52,7 @@ public class InventoryUtils {
             bukkitObjectOutputStream.flush();
             
             return Base64.getEncoder().encodeToString(byteArrayOutputStream.toByteArray());
-        } catch (Exception exc) {
+        } catch (Exception e) {
             return "";
         }
     }
