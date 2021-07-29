@@ -1,6 +1,5 @@
 package org.flayart.eternal.framework;
 
-import com.google.common.collect.Lists;
 import lombok.Getter;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandException;
@@ -10,15 +9,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.flayart.eternal.framework.annotation.CommandInfo;
 
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class CommandFramework implements CommandExecutor {
-    @Getter private List<SubCommand> subCommands;
+    @Getter private Set<SubCommand> subCommands;
 
     public CommandFramework(JavaPlugin plugin) {
         if(!getClass().isAnnotationPresent(CommandInfo.class)) return;
         plugin.getCommand(getClass().getAnnotation(CommandInfo.class).value()).setExecutor(this);
-        this.subCommands = Lists.newArrayList();
+        this.subCommands = new HashSet<>();
     }
 
     public void registerSubcommand(SubCommand... subCommands) {

@@ -1,7 +1,6 @@
 package org.flayart.eternal.cooldowns;
 
 import com.google.common.collect.Maps;
-import lombok.Getter;
 import org.bukkit.entity.Player;
 import org.flayart.eternal.cooldowns.timer.Timer;
 
