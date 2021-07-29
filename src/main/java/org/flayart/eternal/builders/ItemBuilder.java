@@ -1,14 +1,18 @@
 package org.flayart.eternal.builders;
 
 import com.google.common.collect.Lists;
+import io.netty.util.concurrent.CompleteFuture;
 import net.kyori.adventure.text.Component;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.flayart.eternal.cooldowns.Cooldown;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public class ItemBuilder {
     
@@ -35,7 +39,7 @@ public class ItemBuilder {
         
         for (String s : lore)
             componentList.add(Component.translatable(s));
-        
+    
         itemMeta.lore(componentList);
         return this;
     }
