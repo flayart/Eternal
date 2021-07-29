@@ -17,4 +17,10 @@ public class ConnectionPoolManager {
         config.addDataSourceProperty("useSSL", credentials.isUseSSL());
         dataSource = new HikariDataSource(config);
     }
+
+    public void closePool() {
+        if (dataSource != null && !dataSource.isClosed()) {
+            dataSource.close();
+        }
+    }
 }

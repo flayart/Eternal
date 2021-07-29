@@ -9,10 +9,8 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.flayart.eternal.cooldowns.Cooldown;
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 public class ItemBuilder {
     
