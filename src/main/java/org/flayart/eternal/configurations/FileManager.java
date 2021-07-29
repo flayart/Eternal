@@ -20,7 +20,7 @@ public class FileManager {
     private File file;
     @Getter private FileConfiguration configuration;
     
-    public FileManager(JavaPlugin plugin, String name, boolean saveDefault) {
+    public FileManager(JavaPlugin plugin, String name) {
         this.plugin = plugin;
         this.name = name;
         this.file = new File(plugin.getDataFolder(), name + ".yml");
