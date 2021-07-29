@@ -9,6 +9,7 @@ import org.flayart.eternal.database.objects.Credentials;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Objects;
 
 public class ConnectionPoolManager {
     @Getter private final HikariDataSource dataSource;
@@ -37,10 +38,14 @@ public class ConnectionPoolManager {
     }
 
     @SneakyThrows
-    public void close(Connection connection, ResultSet rs, PreparedStatement... stmt) {
+    public void close(Connection connection, ResultSet resultSet, PreparedStatement... stmt) {
+        Objects.requireNonNull(connection);
         connection.close();
-        rs.close();
 
+        Objects.requireNonNull(resultSet);
+        resultSet.close();
+
+        Objects.requireNonNull(stmt);
         for(PreparedStatement statement : stmt) statement.close();
     }
 }
