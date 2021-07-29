@@ -13,26 +13,29 @@ import java.util.HashSet;
 import java.util.Set;
 
 public abstract class CommandFramework implements CommandExecutor {
-    @Getter private Set<SubCommand> subCommands;
-
+    @Getter
+    private Set<SubCommand> subCommands;
+    
     public CommandFramework(JavaPlugin plugin) {
-        if(!getClass().isAnnotationPresent(CommandInfo.class)) return;
+        if (!getClass().isAnnotationPresent(CommandInfo.class)) return;
         plugin.getCommand(getClass().getAnnotation(CommandInfo.class).value()).setExecutor(this);
+        
         this.subCommands = new HashSet<>();
     }
-
+    
     public void registerSubcommand(SubCommand... subCommands) {
         this.subCommands.addAll(Arrays.asList(subCommands));
     }
-
+    
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         try {
-            if(args.length == 0) execute(sender);
+            if (args.length == 0) execute(sender);
             else {
-                for(SubCommand subCommand : subCommands) {
-                    if(!args[0].equalsIgnoreCase(subCommand.getSubcommand())) continue;
-                    if(args.length != subCommand.getMinargs()) continue;
+                for (SubCommand subCommand : subCommands) {
+                    if (!args[0].equalsIgnoreCase(subCommand.getSubcommand())) continue;
+                    if (args.length != subCommand.getMinargs()) continue;
+                    
                     subCommand.execute(sender, args);
                     break;
                 }
@@ -40,9 +43,9 @@ public abstract class CommandFramework implements CommandExecutor {
         } catch (CommandException exception) {
             sender.sendMessage(exception.getMessage());
         }
-
-        return false;
+        
+        return true;
     }
-
+    
     public abstract void execute(CommandSender sender);
 }
