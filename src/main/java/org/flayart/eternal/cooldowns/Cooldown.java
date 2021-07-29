@@ -3,6 +3,7 @@ package org.flayart.eternal.cooldowns;
 import com.google.common.collect.Maps;
 import org.bukkit.entity.Player;
 import org.flayart.eternal.cooldowns.timer.Timer;
+import org.flayart.eternal.utils.TriFunction;
 
 import java.util.HashMap;
 import java.util.UUID;
