@@ -7,6 +7,9 @@ public class CompleteTask extends BukkitRunnable {
     
     @Override
     public void run() {
+        
+        if (Cooldown.COOLDOWN_LIST.isEmpty()) return;
+        
         for (Cooldown cooldown : Cooldown.COOLDOWN_LIST) {
             if(cooldown.isActive()) continue;
             
