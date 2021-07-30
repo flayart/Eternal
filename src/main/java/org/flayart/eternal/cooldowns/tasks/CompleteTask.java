@@ -14,7 +14,7 @@ public class CompleteTask extends BukkitRunnable {
         for (Cooldown cooldown : Eternal.COOLDOWN_LIST) {
             if (cooldown.isActive()) continue;
             
-            cooldown.whenComplete(cooldown.getRunnable());
+            cooldown.getRunnable().run();
         }
     }
 }
