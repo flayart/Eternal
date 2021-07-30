@@ -1,5 +1,6 @@
 package org.flayart.eternal.cooldowns.timer;
 
+import lombok.Getter;
 import org.bukkit.Bukkit;
 
 import java.text.DecimalFormat;
@@ -8,6 +9,8 @@ import java.util.concurrent.CompletableFuture;
 public abstract class Timer implements CooldownTimer {
     
     private static DecimalFormat format;
+    @Getter
+    private Runnable runnable;
     
     static {
         Timer.format = new DecimalFormat("#0.0");
@@ -30,10 +33,6 @@ public abstract class Timer implements CooldownTimer {
     
     @Override
     public void whenComplete(Runnable runnable) {
-        CompletableFuture.runAsync(() -> {
-           if(isActive()) return;
-           
-           runnable.run();
-        });
+        this.runnable = runnable;
     }
 }
