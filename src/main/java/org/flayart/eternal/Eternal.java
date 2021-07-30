@@ -2,6 +2,7 @@ package org.flayart.eternal;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.flayart.eternal.cooldowns.tasks.CompleteTask;
 
 import java.util.Arrays;
 
@@ -17,5 +18,7 @@ public class Eternal extends JavaPlugin {
                 "§aServer Version » " + getServer().getVersion(), "",
                 "§a======================================")
                 .forEach(s -> Bukkit.getConsoleSender().sendMessage(s));
+        
+        new CompleteTask().runTaskTimerAsynchronously(this, 0, 20);
     }
 }
