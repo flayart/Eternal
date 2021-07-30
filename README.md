@@ -12,7 +12,7 @@ public final class Esteban extends JavaPlugin {
   }
   
   public String get() {
-    return "Esteban " + frigerio;
+    return getClass().getName() + frigerio;
   }
 }
 ```
