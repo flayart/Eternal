@@ -2,17 +2,12 @@ package org.flayart.eternal.cooldowns.timer;
 
 import lombok.Getter;
 
-import java.text.DecimalFormat;
+import java.util.UUID;
 
 public abstract class Timer implements CooldownTimer {
     
-    private static DecimalFormat format;
     @Getter
     private Runnable runnable;
-    
-    static {
-        Timer.format = new DecimalFormat("#0.0");
-    }
     
     protected Timer() {
     }
@@ -31,7 +26,15 @@ public abstract class Timer implements CooldownTimer {
     public abstract long getEndTime();
     
     @Override
+    public abstract UUID getUUID();
+    
+    @Override
+    public abstract void reset();
+    
+    @Override
     public void whenComplete(Runnable runnable) {
         this.runnable = runnable;
+        
+        reset();
     }
 }
