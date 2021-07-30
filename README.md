@@ -1,8 +1,7 @@
 # Eternal
 
-`if tu sei una bella gnocca
-    diventi mia fidanzata
-else
-    esplodi`
-
+```java
+public final class Esteban {
+}
+```
 
