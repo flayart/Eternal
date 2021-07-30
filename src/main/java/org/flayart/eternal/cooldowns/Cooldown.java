@@ -34,8 +34,6 @@ public class Cooldown extends Timer {
     
     @Override
     public void reset() {
-        this.endTime = System.currentTimeMillis();
-        
         assert Eternal.COOLDOWN_LIST.contains(this);
         Eternal.COOLDOWN_LIST.remove(this);
         
