@@ -16,7 +16,7 @@ public class Cooldown extends Timer {
     public static final List<Cooldown> COOLDOWN_LIST = Lists.newArrayList();
     
     public Cooldown(long endTime) {
-        this.endTime = endTime;
+        this.endTime = endTime + System.currentTimeMillis();
         
         COOLDOWN_LIST.add(this);
     }

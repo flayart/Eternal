@@ -11,10 +11,11 @@ public class CompleteTask extends BukkitRunnable {
         if (Cooldown.COOLDOWN_LIST.isEmpty()) return;
         
         for (Cooldown cooldown : Cooldown.COOLDOWN_LIST) {
-            if(cooldown.isActive()) continue;
+            if (cooldown.isActive()) continue;
             
             cooldown.getRunnable().run();
-            cooldown.reset();
         }
+        
+        Cooldown.COOLDOWN_LIST.removeIf(cooldown -> !cooldown.isActive());
     }
 }
