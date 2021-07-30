@@ -13,7 +13,6 @@ import java.util.Set;
 
 public class FileManager {
     
-    private final JavaPlugin plugin;
     private static final Set<FileManager> DATA = Sets.newHashSet();
     
     @Getter private final String name;
@@ -21,7 +20,6 @@ public class FileManager {
     @Getter private FileConfiguration configuration;
     
     public FileManager(JavaPlugin plugin, String name) {
-        this.plugin = plugin;
         this.name = name;
         this.file = new File(plugin.getDataFolder(), name + ".yml");
     
@@ -35,7 +33,6 @@ public class FileManager {
     }
     
     public FileManager(JavaPlugin plugin, String name, String... subFolders) {
-        this.plugin = plugin;
         this.name = name;
         this.file = new File(plugin.getDataFolder() + "\\" + String.join("\\", subFolders), name + ".yml");
         
