@@ -13,8 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public abstract class CommandFramework implements CommandExecutor {
-    @Getter
-    private Set<SubCommand> subCommands;
+    @Getter private Set<SubCommand> subCommands;
     
     public CommandFramework(JavaPlugin plugin) {
         if (!getClass().isAnnotationPresent(CommandInfo.class)) return;
@@ -30,8 +29,9 @@ public abstract class CommandFramework implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         try {
-            if (args.length == 0) execute(sender);
-            else {
+            if (args.length == 0) {
+                execute(sender);
+            } else {
                 for (SubCommand subCommand : subCommands) {
                     if (!args[0].equalsIgnoreCase(subCommand.getSubcommand())) continue;
                     if (args.length != subCommand.getMinargs()) continue;
@@ -40,6 +40,7 @@ public abstract class CommandFramework implements CommandExecutor {
                     break;
                 }
             }
+            return true;
         } catch (CommandException exception) {
             sender.sendMessage(exception.getMessage());
         }

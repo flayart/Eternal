@@ -13,7 +13,7 @@ public class Eternal extends JavaPlugin {
         Arrays.asList(
                 "§a======================================", "",
                 "§a               Eternal Lib               ",
-                "§a              by flayart Team            ", "",
+                "§a             by flayart Team            ", "",
                 "§aPlugin Version » " + getDescription().getVersion(),
                 "§aServer Version » " + getServer().getVersion(), "",
                 "§a======================================")

@@ -1,0 +1,17 @@
+
+l
+java:S20952"VUse try-with-resources or close this "BukkitObjectOutputStream" in a "finally" clause.(’úæø
+i
+java:S20951"SUse try-with-resources or close this "ByteArrayOutputStream" in a "finally" clause.(ï–‘·
+n	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(¯ÂÀ¾
+n	java:S135%"YReduce the total number of break and continue statements in this loop to use at most one.(¯ÂÀ¾
+J
+java:S6212#"/Declare this local variable with "var" instead.(óË üÿÿÿÿ
+E
+java:S62121"/Declare this local variable with "var" instead.(ï–‘·
+E
+java:S62122"/Declare this local variable with "var" instead.(’úæø
+J
+java:S6212>"/Declare this local variable with "var" instead.(Áù­¦ýÿÿÿÿ
+J
+java:S6212?"/Declare this local variable with "var" instead.(é’ã¼úÿÿÿÿ
