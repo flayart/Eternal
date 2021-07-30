@@ -14,6 +14,7 @@ public class CompleteTask extends BukkitRunnable {
             if(cooldown.isActive()) continue;
             
             cooldown.getRunnable().run();
+            cooldown.reset();
         }
     }
 }

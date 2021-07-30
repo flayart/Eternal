@@ -6,8 +6,6 @@ public interface CooldownTimer {
     
     long getTimeLeft();
     
-    void reset();
-    
     long getEndTime();
     
     void whenComplete(Runnable runnable);

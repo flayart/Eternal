@@ -33,7 +33,6 @@ public class Cooldown extends Timer {
         this.endTime = endTime;
     }
     
-    @Override
     public void reset() {
         this.endTime = System.currentTimeMillis();
         COOLDOWN_LIST.remove(this);

@@ -33,6 +33,5 @@ public abstract class Timer implements CooldownTimer {
     @Override
     public void whenComplete(Runnable runnable) {
         this.runnable = runnable;
-        reset();
     }
 }
