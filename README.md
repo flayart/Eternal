@@ -14,6 +14,10 @@ public final class Esteban extends JavaPlugin {
   public String get() {
     return getClass().getName() + frigerio;
   }
+
+  public String getInstagram() {
+    return "https://www.instagram.com/estebanfrigerioo/";
+  }
 }
 ```
 
