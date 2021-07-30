@@ -1,5 +1,8 @@
 # Eternal
 
-[la mamma di](ciau)
+`if tu sei una bella gnocca
+    diventi mia fidanzata
+else
+    esplodi`
 
 
