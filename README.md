@@ -1,7 +1,7 @@
 # Eternal
 
 ```java
-public final class Esteban {
+public final class Esteban extends JavaPlugin {
   private String frigerio;
   
   @Override
