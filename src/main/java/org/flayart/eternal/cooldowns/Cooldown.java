@@ -21,10 +21,11 @@ public class Cooldown extends Timer {
         cooldowns.put(uuid, this);
     }
     
-    public static void newCooldown(Player player, long endTime) {
+    public static Cooldown newCooldown(Player player, long endTime) {
         Cooldown cooldown = new Cooldown(player.getUniqueId(), endTime);
         
         cooldown.setEndTime(endTime);
+        return cooldown;
     }
     
     public void setEndTime(long endTime) {
