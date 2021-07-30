@@ -35,9 +35,6 @@ public class Cooldown extends Timer {
     
     @Override
     public void reset() {
-        assert Eternal.COOLDOWN_LIST.contains(this);
-        Eternal.COOLDOWN_LIST.remove(this);
-        
         assert cooldowns.containsKey(uuid);
         cooldowns.remove(uuid);
     }
