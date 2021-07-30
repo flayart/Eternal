@@ -15,7 +15,5 @@ t
 Dsrc/main/java/org/flayart/eternal/cooldowns/timer/CooldownTimer.java,2\0\20785f44eeb5b7a0bea03cb2a9d6eecc9bb6d1ca
 l
 <src/main/java/org/flayart/eternal/cooldowns/timer/Timer.java,0\b\0bde6655c795c1c9a4b0433bf36f628e54a19533
-i
-9src/main/java/org/flayart/eternal/cooldowns/Cooldown.java,2\1\217cb3934f658379ee722496a9029a251666e0b3
 Z
 *.idea/artifacts/Eternal_1_0_0_SNAPSHOT.xml,2\2\22e0b03a163a21f52076e958957a7aae84ffa61d

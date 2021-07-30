@@ -8,7 +8,6 @@ public class CompleteTask extends BukkitRunnable {
     
     @Override
     public void run() {
-        
         if (Eternal.COOLDOWN_LIST.isEmpty()) return;
         
         for (Cooldown cooldown : Eternal.COOLDOWN_LIST) {

@@ -11,10 +11,11 @@ import java.util.List;
 
 public class Eternal extends JavaPlugin {
     
-    public static final List<Cooldown> COOLDOWN_LIST = Lists.newArrayList();
+    public static List<Cooldown> COOLDOWN_LIST;
 
     @Override
     public void onEnable() {
+        COOLDOWN_LIST= Lists.newArrayList();
         Arrays.asList(
                 "§a======================================", "",
                 "§a               Eternal Lib               ",
