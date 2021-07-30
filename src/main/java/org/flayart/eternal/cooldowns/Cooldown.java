@@ -19,6 +19,7 @@ public class Cooldown extends Timer {
         this.endTime = endTime;
         
         cooldowns.put(uuid, this);
+        Eternal.COOLDOWN_LIST.add(this);
     }
     
     public static Cooldown newCooldown(Player player, long endTime) {
