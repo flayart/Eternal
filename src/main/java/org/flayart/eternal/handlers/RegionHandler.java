@@ -22,9 +22,14 @@ public class RegionHandler {
     public ProtectedRegion getRegion(Location location) {
         for (ProtectedRegion region : getRegions(location)) {
             if (region == null) break;
+            
             return region;
         }
         
         return null;
+    }
+    
+    public String getRegionName(Location location) {
+        return getRegion(location).getId();
     }
 }
