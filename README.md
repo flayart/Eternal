@@ -1,3 +1,3 @@
-# 💠 ETERNAL
+# ETERNAL
 
 
