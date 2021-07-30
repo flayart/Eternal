@@ -1,0 +1,4 @@
+name: Eternal
+author: flayart
+version: 1.0.0-SNAPSHOT
+main: org.flayart.eternal.Eternal

@@ -2,11 +2,11 @@ package org.flayart.eternal.framework;
 
 import lombok.Getter;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandException;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.flayart.eternal.framework.annotation.CommandInfo;
+import org.flayart.eternal.framework.exception.CommandException;
 
 import java.util.Arrays;
 import java.util.HashSet;
