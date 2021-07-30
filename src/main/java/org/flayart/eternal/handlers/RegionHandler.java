@@ -8,6 +8,7 @@ import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
 import org.bukkit.Location;
 
+import java.util.Objects;
 import java.util.Set;
 
 public class RegionHandler {
@@ -15,8 +16,8 @@ public class RegionHandler {
     public Set<ProtectedRegion> getRegions(Location location) {
         RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
         ApplicableRegionSet regions = container.get(BukkitAdapter.adapt(location.getWorld())).getApplicableRegions(BukkitAdapter.asBlockVector(location));
-    
-        return regions.getRegions();
+        
+        return Objects.requireNonNull(regions.getRegions(), "The region must not be null");
     }
     
     public ProtectedRegion getRegion(Location location) {
