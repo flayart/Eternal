@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="Eternal-1.0.0-SNAPSHOT">
-    <output-path>$PROJECT_DIR$/../Server/plugins/</output-path>
+    <output-path>$PROJECT_DIR$/../../Utils/Server/plugins</output-path>
     <root id="archive" name="Eternal-1.0.0-SNAPSHOT.jar">
       <element id="module-output" name="Eternal" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/zaxxer/HikariCP/2.4.1/HikariCP-2.4.1.jar" path-in-jar="/" />

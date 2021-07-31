@@ -19,33 +19,19 @@ public class Board {
     private final Player player;
     private final BoardProvider boardProvider;
     private final Objective objective;
-    private final Team team;
     
     public Board(Player player, BoardProvider boardProvider) {
         this.player = player;
         this.boardProvider = boardProvider;
         this.objective = getPlayerObjective();
-        this.team = getPlayerTeam();
         
         setupObjective();
-        setupTeam();
     }
     
     private Objective getPlayerObjective() {
         if (getScoreboard().getObjective("board") == null)
             return getScoreboard().registerNewObjective("board", "dummy", Component.translatable(boardProvider.getIBoard().getTitle(player)));
         return getScoreboard().getObjective("board");
-    }
-    
-    private Team getPlayerTeam() {
-        if (getScoreboard().getTeam("board") == null)
-            return getScoreboard().registerNewTeam("board");
-        return getScoreboard().getTeam("board");
-    }
-    
-    private void setupTeam() {
-        team.setAllowFriendlyFire(true);
-        team.setCanSeeFriendlyInvisibles(false);
     }
     
     private void setupObjective() {
@@ -67,6 +53,9 @@ public class Board {
         String title = boardProvider.getIBoard().getTitle(player);
         List<String> lines = boardProvider.getIBoard().getLines(player)
                 .stream().map(ChatUtils::color).collect(Collectors.toList());
+        
+        if(getScoreboard().getEntries().size() != lines.size())
+            getScoreboard().getEntries().forEach(line -> getScoreboard().resetScores(line));
         
         objective.displayName(Component.translatable(ChatUtils.color(title.length() > 32 ? title.substring(0, 32) : title)));
         
