@@ -1,14 +1,20 @@
 package org.flayart.eternal.holograms;
 
-import lombok.AllArgsConstructor;
+import com.google.common.collect.Lists;
+import lombok.Data;
+import lombok.Getter;
 import org.bukkit.Location;
 import org.flayart.eternal.Eternal;
 
-@AllArgsConstructor
+import java.util.List;
+
+@Data
+@Getter
 public class Hologram {
     private final String name;
     private final Location location;
     private final String text;
+    private List<String> players = Lists.newArrayList();
 
     public static void newHologram(String name, Location location, String... text) {
         if(text.length == 1)
@@ -18,5 +24,7 @@ public class Hologram {
                 Eternal.HOLOGRAM_LIST.add(new Hologram(name, location.add(0, -0.20, 0), string));
         }
     }
+
+
 
 }
