@@ -33,7 +33,7 @@ public class BoardManager {
     }
     
     public void addScoreboard(Player player) {
-        getBoard(player).ifPresent(Board::removeScoreboard);
+        removeScoreboard(player);
         
         scoreboards.put(player.getUniqueId(), new Board(player, boardProvider));
     }
