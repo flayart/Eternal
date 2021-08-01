@@ -20,7 +20,6 @@ public class HologramTask extends BukkitRunnable {
         for(Hologram hologram : Eternal.HOLOGRAM_LIST) {
             if(Eternal.HOLOGRAM_LIST.isEmpty()) continue;
             Location loc = hologram.getLocation();
-            System.out.println(hologram.getText());
 
             for(Player player : Bukkit.getOnlinePlayers()) {
                 if(hologram.getPlayers().contains(player.getName())) continue;
