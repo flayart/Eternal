@@ -5,17 +5,18 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.flayart.eternal.cooldowns.Cooldown;
 import org.flayart.eternal.cooldowns.tasks.CompleteTask;
+import org.flayart.eternal.holograms.Hologram;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class Eternal extends JavaPlugin {
     
-    public static List<Cooldown> COOLDOWN_LIST;
+    public static List<Cooldown> COOLDOWN_LIST = Lists.newArrayList();
+    public static List<Hologram> HOLOGRAM_LIST = Lists.newArrayList();
 
     @Override
     public void onEnable() {
-        COOLDOWN_LIST= Lists.newArrayList();
         Arrays.asList(
                 "§a======================================", "",
                 "§a               Eternal Lib               ",

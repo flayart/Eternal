@@ -1,5 +1,7 @@
 package org.flayart.eternal.utils;
 
+import org.bukkit.Bukkit;
+
 import java.util.function.Function;
 
 @FunctionalInterface
