@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.flayart.eternal.cooldowns.Cooldown;
 import org.flayart.eternal.cooldowns.tasks.CompleteTask;
 import org.flayart.eternal.holograms.Hologram;
+import org.flayart.eternal.holograms.tasks.HologramTask;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,5 +28,6 @@ public class Eternal extends JavaPlugin {
                 .forEach(s -> Bukkit.getConsoleSender().sendMessage(s));
         
         new CompleteTask().runTaskTimerAsynchronously(this, 0, 20);
+        new HologramTask().runTaskTimerAsynchronously(this, 0, 20);
     }
 }

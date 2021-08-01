@@ -11,17 +11,21 @@ import java.util.List;
 @Data
 @Getter
 public class Hologram {
-    private final String name;
     private final Location location;
     private final String text;
     private List<String> players = Lists.newArrayList();
 
-    public static void newHologram(String name, Location location, String... text) {
+    public static void newHologram(Location location, String... text) {
         if(text.length == 1)
-            Eternal.HOLOGRAM_LIST.add(new Hologram(name, location, text[0]));
+            Eternal.HOLOGRAM_LIST.add(new Hologram(location, text[0]));
         else {
-            for(String string : text)
-                Eternal.HOLOGRAM_LIST.add(new Hologram(name, location.add(0, -0.20, 0), string));
+            int i = 1;
+            for (String s : text) {
+                Hologram hologram = new Hologram(location.add(0, -0.2 * i, 0), s);
+                System.out.println(hologram);
+                Eternal.HOLOGRAM_LIST.add(hologram);
+                i++;
+            }
         }
     }
 
