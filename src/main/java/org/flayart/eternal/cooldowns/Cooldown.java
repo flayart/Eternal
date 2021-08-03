@@ -1,5 +1,6 @@
 package org.flayart.eternal.cooldowns;
 
+import com.destroystokyo.paper.event.player.PlayerUseUnknownEntityEvent;
 import com.google.common.collect.Maps;
 import org.bukkit.entity.Player;
 import org.flayart.eternal.Eternal;

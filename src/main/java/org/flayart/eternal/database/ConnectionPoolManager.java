@@ -39,11 +39,9 @@ public class ConnectionPoolManager {
 
     @SneakyThrows
     public void close(Connection connection, ResultSet resultSet, PreparedStatement... stmt) {
-        Objects.requireNonNull(connection);
-        connection.close();
+        Objects.requireNonNull(connection).close();
 
-        Objects.requireNonNull(resultSet);
-        resultSet.close();
+        Objects.requireNonNull(resultSet).close();
 
         Objects.requireNonNull(stmt);
         for(PreparedStatement statement : stmt) statement.close();
