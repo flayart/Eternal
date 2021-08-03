@@ -24,7 +24,7 @@ public class HologramTask extends BukkitRunnable {
             Location loc = hologram.getLocation();
 
             for(Player player : Bukkit.getOnlinePlayers()) {
-                if(hologram.getPlayers().containsKey(player.getName())) continue;
+                if(hologram.getPlayers().contains(player.getName())) continue;
                 if(hologram.getLocation().distance(player.getLocation()) > 100) continue;
 
                 this.stand = new EntityArmorStand(((CraftWorld) loc.getWorld()).getHandle(), loc.getX(), loc.getY(), loc.getZ());
@@ -39,7 +39,7 @@ public class HologramTask extends BukkitRunnable {
 
 
                 PacketUtils.sendPacket(player, packet, data);
-                hologram.getPlayers().put(player.getName(), stand.getId());
+                hologram.getPlayers().add(player.getName());
             }
         }
     }
