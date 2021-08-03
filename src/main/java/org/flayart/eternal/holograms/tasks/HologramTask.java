@@ -23,6 +23,7 @@ public class HologramTask extends BukkitRunnable {
 
             for(Player player : Bukkit.getOnlinePlayers()) {
                 if(hologram.getPlayers().contains(player.getName())) continue;
+                if(hologram.getLocation().distance(player.getLocation()) > 100) continue;
 
                 EntityArmorStand stand = new EntityArmorStand(((CraftWorld) loc.getWorld()).getHandle(), loc.getX(), loc.getY(), loc.getZ());
                 stand.setCustomName(IChatBaseComponent.ChatSerializer.a("{\"text\":\""+ hologram.getText() +"\"}"));
