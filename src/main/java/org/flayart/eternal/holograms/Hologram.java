@@ -1,12 +1,12 @@
 package org.flayart.eternal.holograms;
 
-import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import lombok.Data;
 import lombok.Getter;
 import org.bukkit.Location;
 import org.flayart.eternal.Eternal;
 
-import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Data
@@ -15,7 +15,7 @@ public class Hologram {
     private final String name;
     private final Location location;
     private final String text;
-    private List<String> players = Lists.newArrayList();
+    private Map<String, Integer> players = Maps.newHashMap();
 
     public static void newHologram(String name, Location location, String... text) {
         if(text.length == 1)

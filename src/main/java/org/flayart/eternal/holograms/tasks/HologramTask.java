@@ -15,6 +15,8 @@ import org.flayart.eternal.holograms.Hologram;
 import org.flayart.eternal.utils.PacketUtils;
 
 public class HologramTask extends BukkitRunnable {
+    public EntityArmorStand stand;
+
     @Override
     public void run() {
         for(Hologram hologram : Eternal.HOLOGRAM_LIST) {
@@ -22,10 +24,10 @@ public class HologramTask extends BukkitRunnable {
             Location loc = hologram.getLocation();
 
             for(Player player : Bukkit.getOnlinePlayers()) {
-                if(hologram.getPlayers().contains(player.getName())) continue;
+                if(hologram.getPlayers().containsKey(player.getName())) continue;
                 if(hologram.getLocation().distance(player.getLocation()) > 100) continue;
 
-                EntityArmorStand stand = new EntityArmorStand(((CraftWorld) loc.getWorld()).getHandle(), loc.getX(), loc.getY(), loc.getZ());
+                this.stand = new EntityArmorStand(((CraftWorld) loc.getWorld()).getHandle(), loc.getX(), loc.getY(), loc.getZ());
                 stand.setCustomName(IChatBaseComponent.ChatSerializer.a("{\"text\":\""+ hologram.getText() +"\"}"));
                 stand.setCustomNameVisible(true);
                 stand.setMarker(true);
@@ -37,7 +39,7 @@ public class HologramTask extends BukkitRunnable {
 
 
                 PacketUtils.sendPacket(player, packet, data);
-                hologram.getPlayers().add(player.getName());
+                hologram.getPlayers().put(player.getName(), stand.getId());
             }
         }
     }
