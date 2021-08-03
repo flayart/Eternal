@@ -5,9 +5,11 @@ import com.google.common.collect.Maps;
 import lombok.Data;
 import lombok.Getter;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 import org.flayart.eternal.Eternal;
 
 import java.util.List;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Data
@@ -16,7 +18,7 @@ public class Hologram {
     private final String name;
     private final Location location;
     private final String text;
-    private List<String> players = Lists.newArrayList();
+    private ConcurrentMap<String, Integer> players = Maps.newConcurrentMap();
 
     public static void newHologram(String name, Location location, String... text) {
         if(text.length == 1)
@@ -30,5 +32,15 @@ public class Hologram {
     }
 
 
+    public List<Integer> getIDs(Player player) {
+        List<Integer> holograms = Lists.newArrayList();
+        players.keySet().forEach(k -> holograms.add(players.get(player.getName())));
+        return holograms;
+    }
 
+    public int getID(Player player, int i) {
+        List<Integer> holograms = Lists.newArrayList();
+        players.keySet().forEach(k -> holograms.add(players.get(player.getName())));
+        return holograms.get(i);
+    }
 }
