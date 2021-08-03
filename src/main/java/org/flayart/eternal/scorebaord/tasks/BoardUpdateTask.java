@@ -3,7 +3,7 @@ package org.flayart.eternal.scorebaord.tasks;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.flayart.eternal.handlers.BoardManager;
+import org.flayart.eternal.scorebaord.manager.BoardManager;
 
 import java.util.UUID;
 import java.util.function.Predicate;

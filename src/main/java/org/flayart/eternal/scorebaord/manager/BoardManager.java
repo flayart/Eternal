@@ -1,4 +1,4 @@
-package org.flayart.eternal.handlers;
+package org.flayart.eternal.scorebaord.manager;
 
 import com.google.common.collect.Maps;
 import lombok.Getter;
